@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FastFood | Order via Phone & M-Pesa</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#ef4444" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              primary: '#ef4444',
+              secondary: '#f97316',
+              accent: '#22c55e'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gradient-to-br from-orange-50 via-red-50 to-yellow-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500">
+
+<!-- HEADER -->
+<header class="bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400 text-white shadow-lg">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-2">
+      <img src="/logo.png" alt="FastFood Logo" class="h-8 w-8 rounded-full" />
+      <h1 class="text-2xl font-bold">FastFood</h1>
+    </div>
+    <nav class="space-x-6">
+      <button onclick="toggleDarkMode()" class="ml-4 px-3 py-1 rounded-full bg-white/20 hover:bg-white/40 transition">🌙</button>
+      <a href="#menu" class="hover:underline">Menu</a>
+      <a href="#coffee-heist" class="hover:underline">Coffee Heist</a>
+      <a href="#order" class="hover:underline">Order</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<!-- RANDOM FEATURED PICK -->
+<script>
+  const todaysPicks = [
+    'Beef Wet Fry / Stew – Ready Fast',
+    'Kuku Kienyeji Prepared – Chef’s Choice',
+    'Fresh Mbuzi Meat – Market Pick',
+    'Mayai Kienyeji – Fresh Today',
+    'Green Cooking Bananas – Farm Pick'
+  ];
+  document.addEventListener('DOMContentLoaded', () => {
+    const pick = todaysPicks[Math.floor(Math.random() * todaysPicks.length)];
+    const el = document.getElementById('randomPick');
+    if (el) el.textContent = pick;
+  });
+</script>
+
+<section class="bg-gradient-to-br from-white to-orange-50">
+  <div class="max-w-7xl mx-auto px-6 py-20 text-center">
+    <h2 class="text-4xl font-extrabold mb-4">Fast, Trusted Food & Fresh Market Delivery</h2>
+    <p id="randomPick" class="mt-3 inline-block bg-brand-accent text-white px-4 py-2 rounded-full text-sm shadow">Today’s Pick</p>
+    <p class="text-lg mb-6">Serving Nairobi with speed, transparency & verified delivery.</p>
+    <p class="max-w-3xl mx-auto text-base text-gray-600 mb-8">
+      Our vision is to become Nairobi’s most reliable digital food & fresh market platform — connecting farms, kitchens, riders, and customers through speed, trust, and technology.
+    </p>
+    <a href="https://wa.me/254740963071" target="_blank" class="bg-brand-accent text-white px-8 py-4 rounded-2xl shadow-lg hover:scale-105 transition">Order via WhatsApp</a>
+  </div>
+</section>
+
+<!-- VISION & MISSION -->
+<section id="vision-mission" class="py-20 bg-gradient-to-br from-white to-orange-50">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold mb-10">🌍 Our Vision & Mission</h2>
+    <div class="grid md:grid-cols-2 gap-10 text-left">
+      <div class="bg-white rounded-2xl shadow p-8 hover:shadow-lg transition">
+        <h3 class="text-2xl font-bold mb-4">🌟 Our Vision</h3>
+        <p class="text-lg text-gray-700">
+          To become Nairobi’s most trusted digital food & fresh market platform — known for speed, transparency, quality, and reliable delivery that connects farms, kitchens, riders, and customers seamlessly.
+        </p>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-8 hover:shadow-lg transition">
+        <h3 class="text-2xl font-bold mb-4">🎯 Our Mission</h3>
+        <p class="text-lg text-gray-700">
+          To deliver fresh farm products and quality cooked meals efficiently by using technology, verified riders, and clear communication — ensuring every customer receives safe, affordable, and timely service across Nairobi.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CEO SECTION -->
+<section id="ceo" class="py-20 bg-gradient-to-br from-white to-orange-50">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center mb-12">👨‍💼 CEO Message</h2>
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div class="text-center md:text-left">
+        <h3 class="text-2xl font-bold mb-4">Alvine Omwocha</h3>
+        <p class="text-sm text-gray-500 mb-4">Founder & Chief Executive Officer</p>
+        <p class="text-lg text-gray-700 mb-4">
+          FastFood was built to solve one problem: <strong>trust and speed</strong> in food and fresh market delivery.
+          We believe customers deserve transparency, farmers deserve fair access to markets, and riders deserve reliable work.
+        </p>
+        <p class="text-lg text-gray-700">
+          Our commitment is simple — deliver quality, communicate honestly, and improve every day through technology and feedback.
+        </p>
+      </div>
+      <div class="flex justify-center">
+        <div class="relative">
+        <img src="owner pic.jpg" alt="CEO Photo" class="w-64 h-64 rounded-full object-cover shadow-2xl ring-4 ring-brand-accent" />
+        <div class="absolute inset-0 rounded-full bg-black/10"></div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOMER SERVICE -->
+<section id="customer-service" class="py-20 bg-white">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold mb-6">🤝 Customer Service</h2>
+    <p class="text-lg mb-8">We are committed to fast response, honesty, and care — before, during, and after every order.</p>
+
+    <div class="grid md:grid-cols-3 gap-8 text-left">
+      <div class="bg-gray-50 rounded-2xl p-6 shadow hover:shadow-lg transition">
+        <h3 class="font-bold text-xl mb-2">📞 Support Line</h3>
+        <p class="text-sm">For sensitive or urgent issues only</p>
+        <p class="font-semibold mt-2">Office: 0113 268 080</p>
+      </div>
+
+      <div class="bg-gray-50 rounded-2xl p-6 shadow hover:shadow-lg transition">
+        <h3 class="font-bold text-xl mb-2">💬 Orders & Updates</h3>
+        <p class="text-sm">All orders, confirmations & delivery communication are handled through:</p>
+        <p class="font-semibold mt-2">WhatsApp: 0740 963 071</p>
+      </div>
+
+      <div class="bg-gray-50 rounded-2xl p-6 shadow hover:shadow-lg transition">
+        <h3 class="font-bold text-xl mb-2">🧾 Payments</h3>
+        <p class="text-sm">Secure and transparent payments via M-Pesa</p>
+        <p class="font-semibold mt-2">Till Number: 5542915</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COFFEE HEIST SECTION -->
+<section id="coffee-heist" class="py-20 bg-gradient-to-br from-amber-50 to-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-extrabold mb-4">☕ Coffee Heist</h2>
+      <p class="text-gray-600 max-w-3xl mx-auto">Premium specialty coffee — freshly brewed, fast delivery.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-2xl shadow overflow-hidden relative">
+        <video controls playsinline preload="metadata" class="w-full h-56 object-cover">
+          <source src="/videos/espresso.mp4" type="video/mp4" />
+        </video>
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-3 text-sm">Espresso • Ready in 5 mins</div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow overflow-hidden relative">
+        <video controls playsinline preload="metadata" class="w-full h-56 object-cover">
+          <source src="/videos/latte.mp4" type="video/mp4" />
+        </video>
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-3 text-sm">Latte • Ready in 7 mins</div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow overflow-hidden relative">
+        <video controls playsinline preload="metadata" class="w-full h-56 object-cover">
+          <source src="/videos/iced-coffee.mp4" type="video/mp4" />
+        </video>
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-3 text-sm">Iced Coffee • Ready in 10 mins</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center mb-10">Our Products</h2>
+
+    <!-- COOKED MEAT -->
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <div class="bg-white rounded-2xl shadow overflow-hidden relative">
+        <video controls class="w-full h-64 object-cover"><source src="/videos/beef-wetfry.mp4" type="video/mp4" /></video>
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-3 text-sm">Beef Wet Fry / Stew • Prep: 25 mins • Delivery: 15 mins</div>
+      </div>
+      <div class="bg-white rounded-2xl shadow overflow-hidden relative">
+        <video controls class="w-full h-64 object-cover"><source src="/videos/fresh-mbuzi.mp4" type="video/mp4" /></video>
+        <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white p-3 text-sm">Fresh Mbuzi Meat • Prep: 20 mins • Delivery: 15 mins</div>
+      </div>
+    </div>
+
+    <!-- KUKU KIENYEJI & MAYAI -->
+    <h3 class="text-3xl font-bold mb-6 text-center">🐔 Kuku Kienyeji & Mayai</h3>
+    <div class="grid md:grid-cols-3 gap-8 mb-14">
+
+      <div class="bg-white rounded-2xl shadow overflow-hidden">
+        <img src="/images/kuku-raw.jpg" alt="Raw Kuku Kienyeji" class="w-full h-48 object-cover" />
+        <video controls class="w-full h-48 object-cover"><source src="/videos/kuku-raw-prep.mp4" type="video/mp4" /></video>
+        <div class="p-4">
+          <h4 class="font-bold text-lg">Kuku Kienyeji (Raw)</h4>
+          <p class="text-sm">Cleaned & dressed traditional chicken</p>
+          <p class="font-semibold">KES 850 each</p>
+          <p class="text-xs mt-1">Prep: 15 mins • Delivery: 15 mins</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow overflow-hidden">
+        <video controls class="w-full h-56 object-cover"><source src="/videos/kuku-wetfry.mp4" type="video/mp4" /></video>
+        <div class="p-4">
+          <h4 class="font-bold text-lg">Kuku Kienyeji (Prepared)</h4>
+          <p class="text-sm">Traditional wet fry / stew</p>
+          <p class="font-semibold">KES 1,300</p>
+          <p class="text-xs mt-1">Prep: 40 mins • Delivery: 15 mins</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow overflow-hidden">
+        <img src="/images/mayai-kienyeji.jpg" alt="Mayai Kienyeji" class="w-full h-48 object-cover" />
+        <video controls class="w-full h-48 object-cover"><source src="/videos/mayai-prep.mp4" type="video/mp4" /></video>
+        <div class="p-4">
+          <h4 class="font-bold text-lg">Mayai Kienyeji</h4>
+          <p class="text-sm">Farm fresh traditional eggs</p>
+          <p class="font-semibold">KES 25 per egg</p>
+          <p class="text-xs mt-1">Prep & pack: 5 mins</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FARM FRESH PRODUCTS -->
+    <h3 class="text-3xl font-bold mb-6 text-center">🌱 Fresh From the Farm</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-green-50 rounded-2xl shadow p-6 hover:scale-105 transition">
+        <h4 class="text-xl font-bold">Pumpkins</h4>
+        <p class="text-sm">Fresh farm pumpkins</p>
+        <p class="font-semibold">KES 120 / KG</p>
+        <p class="text-xs mt-1">Prep & Pack: 10 mins</p>
+      </div>
+      <div class="bg-green-50 rounded-2xl shadow p-6 hover:scale-105 transition">
+        <h4 class="text-xl font-bold">Yams</h4>
+        <p class="text-sm">Organically grown yams</p>
+        <p class="font-semibold">KES 180 / KG</p>
+        <p class="text-xs mt-1">Prep & Pack: 10 mins</p>
+      </div>
+      <div class="bg-green-50 rounded-2xl shadow p-6 hover:scale-105 transition">
+        <h4 class="text-xl font-bold">Green Cooking Bananas</h4>
+        <p class="text-sm">Fresh raw green bananas</p>
+        <p class="font-semibold">KES 150 / KG</p>
+        <p class="text-xs mt-1">Prep & Pack: 8 mins</p>
+      </div>
+      <div class="bg-green-50 rounded-2xl shadow p-6 hover:scale-105 transition">
+        <h4 class="text-xl font-bold">Peanuts</h4>
+        <p class="text-sm">Clean dried peanuts</p>
+        <p class="font-semibold">KES 300 / KG</p>
+        <p class="text-xs mt-1">Prep & Pack: 5 mins</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER -->
+<!-- RANDOM ORDER SUGGESTION -->
+<script>
+function suggestRandomItems(){
+  const boxes=document.querySelectorAll('#order input[type="checkbox"]');
+  boxes.forEach(b=>b.checked=false);
+  const shuffled=[...boxes].sort(()=>0.5-Math.random());
+  shuffled.slice(0,2).forEach(b=>b.checked=true);
+  updateOrderList();
+}
+</script>
+
+<section id="order" class="py-20 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400 text-white text-center">
+  <h3 class="text-3xl font-bold mb-4">Order Online (Nairobi Only)</h3>
+  <div class="max-w-xl mx-auto bg-white/10 rounded-2xl p-6">
+    <select id="deliveryZone" class="w-full p-3 rounded-xl text-gray-800 mb-2" onchange="updateETA()">
+      <option value="">Select Delivery Area</option>
+      <option value="Eastlands" data-eta="35" data-map="https://maps.google.com/?q=Eastlands,Nairobi">Nairobi – Eastlands</option>
+      <option value="Ruaka" data-eta="45" data-map="https://maps.google.com/?q=Ruaka,Kiambu">Ruaka</option>
+      <option value="Kitisuru" data-eta="30" data-map="https://maps.google.com/?q=Kitisuru,Nairobi">Kitisuru</option>
+      <option value="Westlands" data-eta="25" data-map="https://maps.google.com/?q=Westlands,Nairobi">Nairobi – Westlands</option>
+      <option value="Parklands" data-eta="28" data-map="https://maps.google.com/?q=Parklands,Nairobi">Parklands</option>
+      <option value="Runda" data-eta="40" data-map="https://maps.google.com/?q=Runda,Nairobi">Runda</option>
+      <option value="Kilimani" data-eta="30" data-map="https://maps.google.com/?q=Kilimani,Nairobi">Kilimani</option>
+      <option value="Kileleshwa" data-eta="32" data-map="https://maps.google.com/?q=Kileleshwa,Nairobi">Kileleshwa</option>
+      <option value="Lavington" data-eta="35" data-map="https://maps.google.com/?q=Lavington,Nairobi">Lavington</option>
+      <option value="other">Other Areas (Delivery Time May Vary)</option>
+    </select>
+    <p id="etaInfo" class="text-sm mt-2"></p>
+    <a id="mapLink" href="#" target="_blank" class="hidden text-sm underline mt-1">📍 View area on Google Maps</a>
+
+    <div class="bg-white rounded-xl p-4 text-gray-800 mb-4 text-left">
+      <p class="font-semibold mb-2">Select your order (by category):</p>
+      <button onclick="suggestRandomItems()" class="mb-3 text-sm bg-white text-gray-800 px-3 py-1 rounded-full hover:bg-gray-100">🎲 Suggest items for me</button>
+
+      <p class="mt-3 font-bold text-sm">🍲 Cooked Meals</p>
+      <label class="block"><input type="checkbox" value="Beef Wet Fry / Stew - KES 900 per KG (Prep 25 mins)" onchange="updateOrderList()"> Beef Wet Fry / Stew</label>
+      <label class="block"><input type="checkbox" value="Kuku Kienyeji Prepared - KES 1,300 (Prep 40 mins)" onchange="updateOrderList()"> Kuku Kienyeji (Prepared)</label>
+
+      <p class="mt-4 font-bold text-sm">🥩 Raw Meat</p>
+      <label class="block"><input type="checkbox" value="Fresh Mbuzi Meat - KES 850 per KG (Prep 20 mins)" onchange="updateOrderList()"> Fresh Mbuzi Meat</label>
+      <label class="block"><input type="checkbox" value="Kuku Kienyeji Raw Clean-Cut - KES 950 (Prep 20 mins)" onchange="updateOrderList()"> Kuku Kienyeji Raw (Clean Cut)</label>
+
+      <p class="mt-4 font-bold text-sm">🥚 Eggs</p>
+      <label class="block"><input type="checkbox" value="Mayai Kienyeji Raw Tray (30 eggs) - KES 700 (Prep 5 mins)" onchange="updateOrderList()"> Mayai Kienyeji (Tray)</label>
+
+      <p class="mt-4 font-bold text-sm">🌱 Fresh From the Farm</p>
+      <label class="block"><input type="checkbox" value="Fresh Pumpkins - KES 120 per KG (Prep 10 mins)" onchange="updateOrderList()"> Pumpkins</label>
+      <label class="block"><input type="checkbox" value="Yams - KES 180 per KG (Prep 10 mins)" onchange="updateOrderList()"> Yams</label>
+      <label class="block"><input type="checkbox" value="Green Cooking Bananas - KES 150 per KG (Prep 8 mins)" onchange="updateOrderList()"> Green Cooking Bananas</label>
+      <label class="block"><input type="checkbox" value="Peanuts - KES 300 per KG (Prep 5 mins)" onchange="updateOrderList()"> Peanuts</label>
+
+      <p class="mt-4 font-bold text-sm">☕ Beverages</p>
+      <label class="block"><input type="checkbox" value="Espresso Coffee - KES 350 (Ready 5 mins)" onchange="updateOrderList()"> Espresso Coffee</label>
+      <label class="block"><input type="checkbox" value="Iced Coffee - KES 380 (Ready 10 mins)" onchange="updateOrderList()"> Iced Coffee</label>
+    </div>
+
+    <textarea id="orderItems" class="w-full p-3 rounded-xl text-gray-800 mb-4" placeholder="Select at least 2 items to continue" readonly></textarea>
+    <button id="waBtn" onclick="sendWhatsAppOrder()" disabled class="w-full bg-green-400 cursor-not-allowed text-white py-3 rounded-lg font-semibold transition">Select 2+ items to send via WhatsApp</button>
+    <p id="zoneError" class="hidden text-yellow-100 mt-3">Note: Delivery time may vary for this area</p>
+    <p id="itemError" class="hidden text-red-200 mt-2">Please select at least 2 items</p>
+  </div>
+</section>
+
+<footer class="bg-gray-900 text-gray-200 py-6 text-center">&copy; 2026 FastFood.com</footer>
+
+<script>
+function toggleDarkMode(){document.documentElement.classList.toggle('dark');}
+function generateRef(){return 'FF-' + Date.now().toString().slice(-6);}
+function updateOrderList(){
+  const checked=document.querySelectorAll('#order input[type="checkbox"]:checked');
+  const orderBox=document.getElementById('orderItems');
+  const waBtn=document.getElementById('waBtn');
+  const itemError=document.getElementById('itemError');
+
+  const items=[...checked].map(c=>"• "+c.value);
+  orderBox.value = items.join("\n");
+
+  if(items.length>=2){
+    waBtn.disabled=false;
+    waBtn.classList.remove('bg-green-400','cursor-not-allowed');
+    waBtn.classList.add('bg-green-600','hover:bg-green-700');
+    waBtn.textContent='Send Order via WhatsApp';
+    itemError.classList.add('hidden');
+  }else{
+    waBtn.disabled=true;
+    waBtn.classList.add('bg-green-400','cursor-not-allowed');
+    waBtn.textContent='Select 2+ items to send via WhatsApp';
+    itemError.classList.remove('hidden');
+  }
+}
+
+// RANDOM RIDER ASSIGNMENT (FRONTEND SIMULATION)
+function assignRider(){
+  const riders=['Rider A','Rider B'];
+  return riders[Math.floor(Math.random()*riders.length)];
+}
+
+// UPDATE ETA + MAP
+function updateETA(){
+  const sel=document.getElementById('deliveryZone');
+  const opt=sel.options[sel.selectedIndex];
+  const eta=document.getElementById('etaInfo');
+  const map=document.getElementById('mapLink');
+  if(!opt||!opt.dataset.eta){eta.textContent='';map.classList.add('hidden');return;}
+  eta.textContent=`Estimated delivery time: ${opt.dataset.eta} minutes`;
+  map.href=opt.dataset.map;
+  map.classList.remove('hidden');
+}
+
+function sendWhatsAppOrder(){
+  const zone=document.getElementById('deliveryZone').value || 'Area not specified';
+  const items=document.getElementById('orderItems').value;
+  const note=document.getElementById('zoneError');
+
+  if(zone==='other'){
+    note.classList.remove('hidden');
+  } else {
+    note.classList.add('hidden');
+  }
+
+  const ref=generateRef();
+  const rider=assignRider();
+  const etaText=document.getElementById('etaInfo').textContent || 'ETA to be confirmed';
+
+  const msg=`ORDER REF: ${ref}
+Area: ${zone}
+${etaText}
+Assigned Rider: ${rider}
+Items:
+${items}
+Pay via Till 5542915`;
+
+  window.open(`https://wa.me/254740963071?text=${encodeURIComponent(msg)}`,'_blank');
+}
+</script>
+
+<script>
+// PWA SERVICE WORKER REGISTRATION
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => console.log('Service Worker registered', reg))
+      .catch(err => console.error('Service Worker registration failed', err));
+  });
+}
+</script>
+
+</body>
+</html>
