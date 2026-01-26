@@ -52,6 +52,7 @@
     'Fresh Mbuzi Meat – Market Pick',
     'Mayai Kienyeji – Fresh Today',
     'Green Cooking Bananas – Farm Pick'
+    irish potatotoes-farm pick
   ];
   document.addEventListener('DOMContentLoaded', () => {
     const pick = todaysPicks[Math.floor(Math.random() * todaysPicks.length)];
@@ -239,6 +240,8 @@
     <h3 class="text-3xl font-bold mb-6 text-center">🌱 Fresh From the Farm</h3>
     <div class="grid md:grid-cols-3 gap-6">
       <div class="bg-green-50 rounded-2xl shadow p-6 hover:scale-105 transition">
+        <div class="text-xl font-bold">irish potatoes</h4>
+          <p class=font-semibold">KES 1200/20KG,KES 800/10KG e.t.c
         <h4 class="text-xl font-bold">Pumpkins</h4>
         <p class="text-sm">Fresh farm pumpkins</p>
         <p class="font-semibold">KES 350/ KG</p>
@@ -310,6 +313,9 @@ function suggestRandomItems(){
       <label class="block"><input type="checkbox" value="Kuku Kienyeji Raw Clean-Cut - KES 1750 (Prep 20 mins)" onchange="updateOrderList()"> Kuku Kienyeji Raw (Clean Cut)</label>
 
       <p class="mt-4 font-bold text-sm">🥚 Eggs</p>
+      <p class=mt-4 font-bold text-sm">irish potatoes</p>
+      <label class="block"><input type="check value=irish potatoes per 20kg-KES 1200,per 10kg-KES 800,per 4kg-KES 400,per3kg-KES 300
+      <p class=ms-4 font-bold text-sm>special shindano rice</p>
       <label class="block"><input type="checkbox" value="Mayai Kienyeji Raw Tray (30 eggs) - KES 1050 (Prep 5 mins)" onchange="updateOrderList()"> Mayai Kienyeji (Tray)</label>
 
       <p class="mt-4 font-bold text-sm">🌱 Fresh From the Farm</p>
@@ -416,6 +422,7 @@ if ('serviceWorker' in navigator) {
 
 </body>
 </html>
+
 
 
 
